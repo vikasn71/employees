@@ -1,0 +1,55 @@
+<h1>Listing employees</h1>
+
+<%= link_to 'Order by Age', orderbyage_path %>
+<%= link_to 'Order by Department', orderbydepartment_path %>
+<%= link_to 'Order by Salary', orderbysalary_path %>
+<%= link_to 'Retired Employees', retired_path %>
+<%= link_to 'Top Salary', topsalary_path %>
+<%= link_to 'Top 5 Salaries', topsalary5_path %>
+<%= link_to 'Oldest 5', old5_path %>
+<%= link_to 'Top paid by department', toppaidbydepartment_path %>
+<%= link_to 'Top and least', topandlast_path %>
+<%= link_to 'Least in retired', leastinretired_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age in years</th>
+      <th>Salary in dollars</th>
+      <th>Department</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.age_in_years %></td>
+        <td><%= employee.salary_in_dollars %></td>
+        <td><%= employee.department.department_name %></td>
+        <td><%= link_to 'Show', employee %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Order by Age', orderbyage_path %>
+<%= link_to 'Order by Department', orderbydepartment_path %>
+<%= link_to 'Order by Salary', orderbysalary_path %>
+<%= link_to 'Retired Employees', retired_path %>
+<%= link_to 'Top Salary', topsalary_path %>
+<%= link_to 'Top 5 Salaries', topsalary5_path %>
+<%= link_to 'Top paid by department', toppaidbydepartment_path %>
+<%= link_to 'Oldest 5', old5_path %>
+<%= link_to 'Top and least', topandlast_path %>
+<%= link_to 'Least in retired', leastinretired_path %>
+
+<%= link_to 'New Employee', new_employee_path %>
